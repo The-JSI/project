@@ -3,6 +3,7 @@ from water_escape import escape_water
 from countdown import countdown
 from weapons import  Weapons, weapons_selection
 from intro import intro_sequence
+from direction import handle_direction
 
 name = input("Hey type your name: ")
 print(f"Hello {name} welcome to the game!")
@@ -11,14 +12,11 @@ chosen_weapon = intro_sequence() #
 
 is_running = True
 while is_running: #controls the outer loop
-
-    direction = input("Do you want to go left or right? (left/right) ").lower()
-    if direction == "left":
-        print("You went left and fell off a cliff, game over.")
+    is_running = handle_direction()
+    if is_running == False:
         break
 
-    elif direction == "right":
-        while True: #inner loop
+    while True: #inner loop
             choice = input(
             "You now see a bridge, do you want to swim under it or cross it? (swim/cross) ").strip().lower()
 
@@ -55,11 +53,3 @@ while is_running: #controls the outer loop
                     print("You got eaten by an alligator, you die, the end!")
                     is_running = False
                     break
-
-    else:
-        print("Sorry not a valid reply, you die!")
-        time.sleep(5)
-        print()
-        print("haha jk u not die lol")
-        print("enter an actual input next time")
-        print()
