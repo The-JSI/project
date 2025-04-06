@@ -1,5 +1,5 @@
 import time
-from water_escape import escape_water
+from scenes.water_escape import escape_water
 from countdown import countdown
 from weapons import  Weapons, weapons_selection
 from intro import intro_sequence
@@ -11,7 +11,7 @@ print(f"Hello {name} welcome to the game!")
 chosen_weapon = intro_sequence() #
 
 is_running = True
-while is_running: #controls the outer loop
+while is_running:
     is_running = handle_direction()
     if is_running == False:
         break
@@ -42,12 +42,35 @@ while is_running: #controls the outer loop
                         is_running = False
                         break
 
+                    print("You chose to get out of the water")
+                    #continue here after escape_water
+
                 elif chosen_weapon == "bow":
                     print("The water is not suitable for the bow and the string has become stiff.")
                     # Reduce the agility using chosen_weapon
                     weapons_selection[chosen_weapon].agility = 7
                     print(
                         f"The agility of the {weapons_selection[chosen_weapon].name} has been reduced to {weapons_selection[chosen_weapon].agility}.")
+                    time.sleep(2)
+    
+                    print("You manage to drag yourself to shore, only to find a dark cave entrance.")
+                
+                    while True:
+                        next_move = input("Do you want to enter the cave or rest outside? (enter/rest) ").strip().lower()
+                        if next_move == "enter":
+                            print("Inside the cave, you find a mysterious craftsman who offers to fix your bow.")
+                            weapons_selection[chosen_weapon].agility = 12
+                            print(f"Your bow has been repaired and agility is restored to {weapons_selection[chosen_weapon].agility}!")
+                        #maybe can have a way to get back to a certain part in the game
+
+                        elif next_move == "rest":
+                            print("You rest outside. It's peaceful but nothing happens.")
+                            break
+                        ## this doesn't end but rather loops back to swim/cross
+                        else:
+                            print("You wander aimlessly and end up back where you started.")
+
+            
 
                 else:
                     print("You got eaten by an alligator, you die, the end!")
