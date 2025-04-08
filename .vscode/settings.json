@@ -1,0 +1,5 @@
+{
+    "python.analysis.extraPaths": [
+        "./text_based_game/scenes"
+    ]
+}
