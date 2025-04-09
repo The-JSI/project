@@ -1,12 +1,15 @@
 import time
+from weapons import weapons_selection
+from scenes.left_path_fate import left_path_fate
 
-def handle_direction():
+def handle_direction(chosen_weapon):
     while True:
         direction = input("Do you want to go left or right? (left/right) ").lower()
 
         if direction == "left":
-            print("You went left and fell off a cliff, game over.")
-            return False  # Ends the game
+            return left_path_fate(chosen_weapon)
+        
+        
         elif direction == "right":
             return True  # Continue with the game
         else:

@@ -16,11 +16,13 @@ chosen_weapon = intro_sequence() #
 
 is_running = True
 while is_running:
-    is_running = handle_direction()
+    is_running = handle_direction(chosen_weapon)
     if is_running == False:
         break
 
+    print("You Keep moving on...")
+    time.sleep(3)
+    
     is_running = swimcross(chosen_weapon)
-
     if not is_running:
         break
