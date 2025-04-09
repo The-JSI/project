@@ -13,4 +13,7 @@ def left_path_fate(chosen_weapon):
         weapon = weapons_selection[chosen_weapon]
         weapon.dmg = weapon.max_upgradable_dmg
         print(f"✨ Miraculously, your {weapon.name} has been upgraded to its MAX DAMAGE: {weapon.dmg}!")
-        return True
+        time.sleep(2)
+        print("You find a secret path that leads you back to the original crossroads...")
+        time.sleep(2)
+        return "retry"

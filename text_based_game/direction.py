@@ -7,9 +7,12 @@ def handle_direction(chosen_weapon):
         direction = input("Do you want to go left or right? (left/right) ").lower()
 
         if direction == "left":
-            return left_path_fate(chosen_weapon)
-        
-        
+           result = left_path_fate(chosen_weapon)
+           if result == "retry":
+              continue #go back to direction
+           else:
+               return result # the result in this case if not retry would have been false and the game ends
+     
         elif direction == "right":
             return True  # Continue with the game
         else:
