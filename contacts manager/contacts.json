@@ -1,0 +1,19 @@
+{
+  "contacts": [
+    {
+      "name": "tim",
+      "age": "24",
+      "email": "tim@gmail.com"
+    },
+    {
+      "name": "timothy",
+      "age": "18",
+      "email": "timmothy@gmail.com"
+    },
+    {
+      "name": "joe",
+      "age": "54",
+      "email": "joe@gmail.com"
+    }
+  ]
+}
