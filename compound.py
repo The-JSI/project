@@ -8,8 +8,8 @@ def details():
     months = int(input("enter the no. of months: "))
     return true_percent, months
 
-def compound(principal, true_percent, months):
-    result = principal * (true_percent **  months)
+def compound(amount, true_percent, months):
+    result = amount * (true_percent **  months)
     return result
 
 def main():
