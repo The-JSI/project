@@ -60,9 +60,11 @@ arepas = Menu('Take a’ Arepa', arepas_items, 1000, 2000)
 
 menu_list = [brunch, early_bird, dinner, kids]
 
+#franchises
 flagship_store = Franchise("1232 West End Road", menu_list)
 new_installment = Franchise("12 East Mulberry Street", menu_list)
 arepas_place = Franchise("189 Fitzgerald Avenue", arepas)
 
+#businesses
 basta = Business("Basta Fazoolin' with my Heart", [flagship_store, new_installment])
 arepa = Business('Take a’ Arepa', [arepas_place])
