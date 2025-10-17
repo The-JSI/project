@@ -14,8 +14,8 @@ def format_in_indian_style(number):
 
 # Input from user
 amount = float(input("Enter initial amount: "))
-increment = float(input("Enter the monthly increment amount: "))
-percentages_input = input("Enter the list of monthly percentages (comma-separated): ")
+increment = float(input("Enter the increment amount: "))
+percentages_input = input("Enter the list of percentages (comma-separated): ")
 percentages = list(map(float, percentages_input.split(',')))
 
 # Initialize variables
@@ -42,12 +42,12 @@ for month, percent in enumerate(percentages, start=1):
     net_profit = result - amount - total_invested
 
     # Print details for the current month
-    print(f"Month {month}:")
+    print(f"Iteration {month}:")
     print(f"  Percentage: {percent}%")
     print(f"  Current Amount: {format_in_indian_style(result)}")
-    print(f"  Profit this month: {format_in_indian_style(profit)}")
+    print(f"  Profit this time: {format_in_indian_style(profit)}")
     print(f"  Total Invested till now: {format_in_indian_style(total_invested)}")
     print(f"  Net Profit till now: {format_in_indian_style(net_profit)}")
     print()
     
-    previous = result  # Update previous for the next month
+    previous = result  # Update previous for the next time
